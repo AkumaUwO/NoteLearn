@@ -1,6 +1,7 @@
 'use strict'
 const cors = require('cors');
 const authRoutes = require('./users/auth.routes');
+const LessonRoutes = require('./lessons/lessons.routes');
 const express = require('express');
 const properties = require('./config/properties');
 const DB = require('./config/db');
@@ -23,6 +24,7 @@ app.use(cors());
 
 app.use('/api', router);
 authRoutes(router);
+LessonRoutes(router);
 router.get('/', (req, res)=>{
     const localStorageToken = localStorage.getItem('ACCESS_TOKEN');
     if(localStorageToken != null || localStorageToken != ""){
