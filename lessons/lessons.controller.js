@@ -9,11 +9,11 @@ const Lesson = require('./lessons.dao');
 
     const result = await Lesson.create(newLesson);
     if(result){
-            const dataUser = {
+            const data = {
                 title: result.title,
                 content: result.content
             }
-        res.send({message: 'Lección creada correctamente', dataUser });
+        res.send({message: 'Lección creada correctamente', data });
     }
 }
 
