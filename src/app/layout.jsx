@@ -1,5 +1,6 @@
 import "./globals.css";
 import 'remixicon/fonts/remixicon.css';
+import 'react-piano/dist/styles.css';
 
 import Navbar from "@/components/navbar/Navbar";
 
