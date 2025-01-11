@@ -1,16 +1,14 @@
 "use client"
 
-import { useState } from "react";
+import { useContext } from "react";
+
+import { PianoContex } from "@/contexts/PianoContext";
 
 import { Piano, KeyboardShortcuts, MidiNumbers } from "react-piano";
-import { SplendidGrandPiano } from "smplr";
 
 export default function PianoComponent() {
 
-    //const context = new AudioContext();
-    //const pianoSounds = new SplendidGrandPiano(context);
-
-    const [isPianoLoaded, setPianoLoaded] = useState(true);
+    const { pianoSounds, isPianoLoaded } = useContext(PianoContex);
 
     const firstNote = MidiNumbers.fromNote('c3');
     const lastNote = MidiNumbers.fromNote('f5');
@@ -24,7 +22,7 @@ export default function PianoComponent() {
     const playNote = (midiNumber) => {
         const activeNote = MidiNumbers.getAttributes(midiNumber).note;
 
-       // pianoSounds.start({ note: activeNote })
+        pianoSounds.start({ note: activeNote })
 
         console.log(activeNote)
     };
@@ -35,10 +33,6 @@ export default function PianoComponent() {
         console.log(note)
     };
 
-    /*pianoSounds.load.then(() => {
-        setPianoLoaded(true);
-    })*/
-
     return (
         <section>
             {isPianoLoaded ?
@@ -46,7 +40,7 @@ export default function PianoComponent() {
                     noteRange={{ first: firstNote, last: lastNote }}
                     playNote={playNote}
                     stopNote={stopNote}
-                    width={1000}
+                    width={800}
                     keyboardShortcuts={keyboardShortcuts}
                 />
                 :
