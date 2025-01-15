@@ -5,4 +5,5 @@ visitarlas se ejecuten las funciones referentes a manejo de datos en la colecciÃ
 module.exports = (router)=>{
     //Ruta de llamada a funcion para crear Lecciones
     router.post('/uploadScore', Scores.uploadScore);
+    router.get('/getAllScores', Scores.getAllScores);
 }
