@@ -14,7 +14,7 @@ export default function TestsMenu() {
     return (
         <section className="pt-5 mx-5">
 
-            <h1 className="text-2xl font-extrabold text-fuchsia-500 text-center mb-8">
+            <h1 className="text-2xl font-extrabold text-fuchsia-700 text-center mb-8">
                 Selecciona las Lecciones Disponibles
             </h1>
 
@@ -25,10 +25,11 @@ export default function TestsMenu() {
                             href={`/lessons-menu/lessons-page/${test._id}`}
                             className="flex items-center"
                         >
-                            <GenericButton
-                                text={index + 1}
-                                styles="w-14 h-14 bg-fuchsia-600 text-white font-extrabold text-xl rounded-full flex items-center justify-center"
-                            />
+                            <div className="w-fit h-fit">
+                                <div className="w-14 h-14 bg-fuchsia-600 text-white font-extrabold text-lg rounded-full flex items-center justify-center">
+                                    {index + 1}
+                                </div>
+                            </div>
                             <p className="ml-2 font-bold text-fuchsia-800 text-lg">
                                 {test.text}
                             </p>

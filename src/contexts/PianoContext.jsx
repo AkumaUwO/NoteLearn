@@ -1,9 +1,9 @@
 'use client'
 
-import { 
-    createContext,  
-    useState, 
-    useEffect 
+import {
+    createContext,
+    useState,
+    useEffect
 } from "react";
 
 import { SplendidGrandPiano } from "smplr";
@@ -15,23 +15,27 @@ export const PianoProvider = ({ children }) => {
     const [isPianoLoaded, setPianoLoaded] = useState(false);
     const [pianoSounds, setPianoSounds] = useState();
 
+    const pianoLoader = () => {
+        if (!pianoSounds) {
+            const context = new AudioContext();
+            setPianoSounds(new SplendidGrandPiano(context));
+        };
+
+        if (pianoSounds) {
+            console.log("Cargando sonidos")
+            pianoSounds.load.then(() => {
+                console.log("Sonidos Cargandos")
+                setPianoLoaded(true);
+            });
+        };
+    };
+
     useEffect(() => {
         try {
-            if (!pianoSounds) {
-                console.log("Definiendo sonidos")
-                const context = new AudioContext();
-                setPianoSounds(new SplendidGrandPiano(context));
-            };
-            
-            if (pianoSounds) {
-                console.log("Cargando sonidos")
-                pianoSounds.load.then(() => {
-                    console.log("Sonidos Cargandos")
-                    setPianoLoaded(true);
-                });
-            };
+            pianoLoader();
         } catch (error) {
-            console.error("Error en PianoContext: ", error)
+            console.log("Error en PianoContext: ", error);
+            pianoLoader();
         }
     }, [pianoSounds]);
 
