@@ -1,14 +1,19 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const formTestSchema = new Schema ({
-    question: [{
+const scoresSchema = new Schema ({
+    score: [{
+        type: Number,
+        required: true,
+        trim: true
+    }],
+    username: [{
         type: String,
         required: true,
         trim: true
     }],
-    answer: [{
-        type: String,
+    lessonNumber: [{
+        type: Number,
         required: true,
         trim: true
     }]
@@ -16,4 +21,4 @@ const formTestSchema = new Schema ({
     timestamps: true
 });
 
-module.exports = formTestSchema;
+module.exports = scoresSchema;

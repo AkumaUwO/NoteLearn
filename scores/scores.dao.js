@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const authSchema = require('./lessons.model');
+const scoresSchema = require('./scores.model');
 
-authSchema.statics = {
+scoresSchema.statics = {
     create: async function (data) {
             const Form = new this(data);
             const savedForm = await Form.save().then(function (models) {
@@ -44,5 +44,5 @@ authSchema.statics = {
     }
 };
 
-const formTestModel = mongoose.model('formTest', authSchema);
-module.exports = formTestModel;
+const scoresModel = mongoose.model('scores', scoresSchema);
+module.exports = scoresModel;
