@@ -13,7 +13,7 @@ exports.uploadScore = async(req, res, next)=> {
         res.status(409).send({message: 'Error del servidor'})
     } else {
             const dataScore = {
-                name: result.lessonNumber,
+                lessonNumber: result.lessonNumber,
                 username: result.username,
                 score: result.score
             }
