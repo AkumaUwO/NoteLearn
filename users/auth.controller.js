@@ -37,13 +37,13 @@ const SECRET_KEY = '057cc82566ea809978f211392f657fed93614056c163f9e5bca49306bd8f
 //Funcion para Iniciar sesion
 exports.loginUser = async(req, res, next)=> {
     const userData = {
-        email: req.body.email,
+        username: req.body.username,
         password: req.body.password ? req.body.password : "indefinido"
     }
 
-    await User.findOne({email: userData.email}).then(function (user) {
+    await User.findOne({username: userData.username}).then(function (user) {
         if(!user){
-            // El correo no existe
+            // El usuario no existe
             res.status(409).send({message: 'Error al iniciar sesión verifique sus datos'});
         } else{
         const resultPassword = bcrypt.compareSync(userData.password, user.password);
