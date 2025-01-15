@@ -8,10 +8,15 @@ export default function Home() {
 
   return (
     <section className="w-full h-full p-5">
-      <div>
-        <Link href={"/tests-menu"}>
+      <div className="text-center">
+        <Link href={"/lessons-menu"}>
           <GenericButton
-            text={"Pruebas"}
+            text={"Lecciones"}
+          />
+        </Link>
+        <Link href={"/lessons-menu/test-page/1"}>
+          <GenericButton
+            text={"test"}
           />
         </Link>
       </div>

@@ -1,10 +1,13 @@
 import { PianoProvider } from "@/contexts/PianoContext";
+import { UserProvider } from "@/contexts/UserContext";
 
 export default function ContextProvider({ children }) {
 
     return (
-        <PianoProvider>
-            {children}
-        </PianoProvider>
+        <UserProvider>
+            <PianoProvider>
+                {children}
+            </PianoProvider>
+        </UserProvider>
     );
 };

@@ -1,8 +1,12 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+
+import { registerUser } from "@/api/user.api";
+
+import { UserContex } from "@/contexts/UserContext";
 
 import VariableInput from "@/components/ui/formsElements/VariableInput";
 import SubmitButton from "@/components/ui/formsElements/SubmitButton";
@@ -13,34 +17,58 @@ export default function SingInPage() {
     /**************************{ Declaraciones }**************************/
 
 
-    const loginDataObjTemplate = {
+    const registerDataObjTemplate = {
         name: '',
-        userName: '',
+        username: '',
         password: '',
         repeatPassword: ''
     }
 
     const router = useRouter();
 
-    const [loginData, setLoginData] = useState(loginDataObjTemplate);
+    const { setUserData } = useContext(UserContex);
+
+    const [registerData, setregisterData] = useState(registerDataObjTemplate);
     const [credentialsError, setCredentialsError] = useState([false, '']);
     const [showPassword, setShowPassword] = useState(false);
 
 
     /**************************{ Funciones }**************************/
 
-
     const updateRegisterData = (key, newValue) => {
-        setLoginData((prevLoginData) => ({
-            ...prevLoginData,
+        setregisterData((prevregisterData) => ({
+            ...prevregisterData,
             [key]: newValue
         }));
     };
 
     const handleSubmit = async (e) => {
+        try {
+            e.preventDefault();
 
-        e.preventDefault();
+            if (registerData.password !== registerData.repeatPassword) {
+                setCredentialsError([true, 'Las contraseñas no coinciden.']);
+                return;
+            }
 
+            const userData = {
+                name: registerData.name,
+                username: registerData.username.toLowerCase(),
+                password: registerData.password
+            };
+
+            const registerResult = await registerUser(userData);
+
+            if (!registerResult.dataUser) {
+                setCredentialsError([true, registerResult.message]);
+                return
+            };
+
+            setUserData(registerResult.dataUser);
+            router.push("/");
+        } catch (error) {
+            console.error("handleSubmit error: ", error);
+        };
     };
 
     /**************************{ Return }**************************/
@@ -63,7 +91,7 @@ export default function SingInPage() {
                         <VariableInput
                             type={"text"}
                             id={"name"}
-                            value={loginData.name}
+                            value={registerData.name}
                             setStateFunction={(e) => updateRegisterData("name", e.target.value)}
                             error={credentialsError[0]}
                             autoComplete={"off"}
@@ -72,14 +100,14 @@ export default function SingInPage() {
 
                     {/* Username Input */}
                     <div className="mt-6">
-                        <label htmlFor="userName" className="font-bold">
+                        <label htmlFor="username" className="font-bold">
                             Nombre de Usuario:
                         </label>
                         <VariableInput
                             type={"text"}
-                            id={"userName"}
-                            value={loginData.userName}
-                            setStateFunction={(e) => updateRegisterData("userName", e.target.value)}
+                            id={"username"}
+                            value={registerData.username}
+                            setStateFunction={(e) => updateRegisterData("username", e.target.value)}
                             error={credentialsError[0]}
                             autoComplete={"off"}
                         />
@@ -95,7 +123,7 @@ export default function SingInPage() {
                         <VariableInput
                             type={`${showPassword ? "text" : "password"}`}
                             id={"password"}
-                            value={loginData.password}
+                            value={registerData.password}
                             setStateFunction={(e) => updateRegisterData("password", e.target.value)}
                             error={credentialsError[0]}
                             autoComplete={"off"}
@@ -107,7 +135,7 @@ export default function SingInPage() {
                         <VariableInput
                             type={`${showPassword ? "text" : "password"}`}
                             id={"repeatPassword"}
-                            value={loginData.repeatPassword}
+                            value={registerData.repeatPassword}
                             setStateFunction={(e) => updateRegisterData("repeatPassword", e.target.value)}
                             error={credentialsError[0]}
                             autoComplete={"off"}

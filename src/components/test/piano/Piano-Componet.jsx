@@ -10,8 +10,8 @@ export default function PianoComponent() {
 
     const { pianoSounds, isPianoLoaded } = useContext(PianoContex);
 
-    const firstNote = MidiNumbers.fromNote('c3');
-    const lastNote = MidiNumbers.fromNote('f5');
+    const firstNote = MidiNumbers.fromNote('c4');
+    const lastNote = MidiNumbers.fromNote('b4');
 
     const keyboardShortcuts = KeyboardShortcuts.create({
         firstNote,
@@ -28,9 +28,7 @@ export default function PianoComponent() {
     };
 
     const stopNote = (midiNumber) => {
-        const note = MidiNumbers.getAttributes(midiNumber).note;
-
-        console.log(note)
+        console.log(midiNumber)
     };
 
     return (
@@ -40,8 +38,9 @@ export default function PianoComponent() {
                     noteRange={{ first: firstNote, last: lastNote }}
                     playNote={playNote}
                     stopNote={stopNote}
-                    width={800}
+                    width={400}
                     keyboardShortcuts={keyboardShortcuts}
+                    activeNotes={[60, 62, 64, 65, 67, 69, 71]}
                 />
                 :
                 "Piano is Loading"

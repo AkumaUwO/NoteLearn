@@ -1,8 +1,14 @@
 "use client"
 
+import { useContext } from "react";
+
+import { UserContex } from "@/contexts/UserContext";
+
 import SidebarMenuLi from "./SidebarMenuLi";
 
 export default function NavSessionSidebar({ sessionSidebar, toggleSidebar }) {
+
+    const { userData } = useContext(UserContex);
 
     return (
         <menu>
@@ -18,17 +24,37 @@ export default function NavSessionSidebar({ sessionSidebar, toggleSidebar }) {
                 <h1 className="text-2xl font-semibold mb-4">Menú de Sesión</h1>
                 <ul>
                     <div>
-                        <SidebarMenuLi
-                            text={"Iniciar Sesión"}
-                            href={"/login-form"}
-                            onClick={toggleSidebar}
-                        />
+                        {
+                            userData
+                                ?
+                                <div>
+                                    {/*<SidebarMenuLi
+                                        text={"Perfil de Usuario"}
+                                        href={"/login-form"}
+                                        onClick={toggleSidebar}
+                                    />*/}
 
-                        <SidebarMenuLi
-                            text={"Registrarse"}
-                            href={"/signup-form"}
-                            onClick={toggleSidebar}
-                        />
+                                    <SidebarMenuLi
+                                        text={"Cerrar Sesión"}
+                                        href={"/signup-form"}
+                                        onClick={toggleSidebar}
+                                    />
+                                </div>
+                                :
+                                <div>
+                                    <SidebarMenuLi
+                                        text={"Iniciar Sesión"}
+                                        href={"/login-form"}
+                                        onClick={toggleSidebar}
+                                    />
+
+                                    <SidebarMenuLi
+                                        text={"Registrarse"}
+                                        href={"/signup-form"}
+                                        onClick={toggleSidebar}
+                                    />
+                                </div>
+                        }
                     </div>
                 </ul>
             </div>

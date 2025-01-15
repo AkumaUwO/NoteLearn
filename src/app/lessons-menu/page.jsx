@@ -7,8 +7,7 @@ import GenericButton from "@/components/ui/utility/GenericButton";
 export default function TestsMenu() {
 
     const exampleArray = [
-        { _id: 1, text: "Bases" }, { _id: 2, text: "idk, texto de ejemplo" }, { _id: 3, text: "No me clickees" }, { _id: 1, text: "Bases" }, { _id: 2, text: "idk, texto de ejemplo" }, { _id: 3, text: "No me clickees" }, { _id: 1, text: "Bases" }, { _id: 2, text: "idk, texto de ejemplo" }, { _id: 3, text: "No me clickees" }, { _id: 1, text: "Bases" }, { _id: 2, text: "idk, texto de ejemplo" }, { _id: 3, text: "No me clickees" },
-        { _id: 1, text: "Bases" }, { _id: 2, text: "idk, texto de ejemplo" }, { _id: 3, text: "No me clickees" }
+        { _id: 1, text: "Introducción a la Música" },
     ]
 
     return (
@@ -22,10 +21,12 @@ export default function TestsMenu() {
 
             <div className="mt-5 sm:grid sm:grid-cols-2 xl:grid-cols-3">
                 {exampleArray.map((test, index) => (
-                    <div key={index} className="m-5">
-                        <Link href={`/tests-menu/test-page/${test._id}`} className="flex items-center">
+                    <div key={index} className="m-5 p-2 border rounded-full border-2 hover:shadow-inner hover:shadow-fuchsia-500 hover:border-fuchsia-500 shadow-lg transition-all duration-300 ease-in-out">
+                        <Link
+                            href={`/lessons-menu/lessons-page/${test._id}`}
+                            className="flex items-center"
+                        >
                             <GenericButton
-                                
                                 text={index + 1}
                                 styles={"w-12 h-12"}
                             />
