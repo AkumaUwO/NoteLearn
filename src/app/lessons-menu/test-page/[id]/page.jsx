@@ -33,7 +33,7 @@ export default function TestsPage() {
 
     return (
         <section className="p-5">
-            <TestsSection testId={testId.id}/>
+            <TestsSection testId={testId.id} setStart={setStart}/>
         </section>
     );
 };
