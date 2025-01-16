@@ -17,7 +17,7 @@ export const PianoProvider = ({ children }) => {
 
     const pianoLoader = () => {
         if (!pianoSounds) {
-            const context = new AudioContext();
+            const context = new window.AudioContext();
             setPianoSounds(new SplendidGrandPiano(context));
         };
 

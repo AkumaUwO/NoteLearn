@@ -1,0 +1,21 @@
+.ReactPiano__Key--natural {
+    transition: all 0.2s ease-in-out;
+}
+
+.ReactPiano__Key--active.ReactPiano__Key--natural {
+    background-color: #f5d0fe;
+    border: 1px solid #e879f9;
+    color: black;
+}
+
+.ReactPiano__Key--accidental {
+    transition: all 0.2s ease-in-out;
+}
+
+.ReactPiano__Key--active.ReactPiano__Key--accidental {
+    background-color: #4a044e;
+}
+
+.ReactPiano__NoteLabel--natural.ReactPiano__NoteLabel--active {
+    color: black;
+  }

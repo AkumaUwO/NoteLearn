@@ -1,22 +1,13 @@
-import LesssonCard from "../lessonCard";
-import LessonsJumper from "../lessonsJumper";
+import LesssonCard from "../LessonCard";
+import LessonsJumper from "../LessonsJumper";
+import LessonTittle from "../LessonsTittle";
+import DoSiPiano from "@/components/test/piano/Do-SiPiano";
 
-export default function Lesson2() {
+export default function Lesson2({ lessonId }) {
     return (
         <div className="w-full h-fit p-5">
-            <div className="flex items-center justify-center mb-6">
-                <div className="flex items-center bg-fuchsia-500 p-2 rounded-full">
-                    <p className="text-white text-lg font-bold mx-3">
-                        Lección:
-                    </p>
-                    <div className="w-12 h-12 bg-white text-lg rounded-full flex items-center justify-center font-bold">
-                        2
-                    </div>
-                </div>
-                <h1 className="ml-5 text-3xl font-extrabold text-fuchsia-600 text-center">
-                    Lección de Piano: Introducción y Primeros Pasos
-                </h1>
-            </div>
+
+            <LessonTittle tittle={"Lección de Piano: Introducción y Primeros Pasos"} lessonId={lessonId} />
 
             <p className="mt-2 mx-auto w-fit text-base text-gray-500 italic font-light text-center">
                 "La música es un mundo en sí misma. Es un lenguaje que todos podemos entender."
@@ -135,7 +126,7 @@ export default function Lesson2() {
 
                 <p className="mt-5 text-base">
                     Las notas musicales popularmente en el mundo de la musica es
-                    posible reconocerla con otra simbologia conocida como cifrado musical
+                    posible reconocerla con otra simbologia conocida como <strong>Cifrado Musical</strong>,
                     el cual es un sistema de notación que se utiliza
                     para representar los acordes y las escalas en la música.
                     Se usa principalmente en la música moderna y popular, y tiene
@@ -151,10 +142,15 @@ export default function Lesson2() {
                     alt="Ubicación de la nota DO"
                     className="w-[60%] h-auto mt-4 mx-auto rounded-md shadow-md"
                 />
+                
+                <DoSiPiano/>
+                
                 <br /><br />
+                
             </LesssonCard>
 
-            <LessonsJumper id={2} test={true}/>
+            <LessonsJumper id={2} test={true} />
+            
         </div>
     );
 };

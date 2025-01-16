@@ -1,22 +1,12 @@
-import LesssonCard from "../lessonCard";
-import LessonsJumper from "../lessonsJumper";
+import LessonTittle from "../LessonsTittle";
+import LesssonCard from "../LessonCard";
+import LessonsJumper from "../LessonsJumper";
 
-export default function Lesson1() {
+export default function Lesson1({ lessonId }) {
     return (
         <div className="w-full h-fit p-5">
-            <div className="flex items-center justify-center mb-6">
-                <div className="flex items-center bg-fuchsia-500 p-2 rounded-full">
-                    <p className="text-white text-lg font-bold mx-3">
-                        Lección:
-                    </p>
-                    <div className="w-12 h-12 bg-white text-lg rounded-full flex items-center justify-center font-bold">
-                        1
-                    </div>
-                </div>
-                <h1 className="ml-5 text-3xl font-extrabold text-fuchsia-600 text-center">
-                    Introducción a la Música
-                </h1>
-            </div>
+
+            <LessonTittle tittle={"Introducción a la Música"} lessonId={lessonId} />
 
             <p className="mt-2 mx-auto w-fit text-base text-gray-500 italic font-light text-center">
                 "La Música es el arte de los sonidos. Se lee y se escribe

@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 
-import LessonsSecction from "@/components/lessons/lessonsSection";
+import LessonsSecction from "@/components/lessons/LessonsSection";
 
 export default function LessonsPage() {
 

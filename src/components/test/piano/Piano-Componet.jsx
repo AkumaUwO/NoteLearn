@@ -5,13 +5,15 @@ import { useContext } from "react";
 import { PianoContex } from "@/contexts/PianoContext";
 
 import { Piano, KeyboardShortcuts, MidiNumbers } from "react-piano";
+import "react-piano/dist/styles.css";
+import "@/components/test/piano/piano-styles.css"
 
-export default function PianoComponent() {
+export default function PianoComponent({ firstNoteProp, lasNoteProp, width, onPlayFunction, ...props }) {
 
     const { pianoSounds, isPianoLoaded } = useContext(PianoContex);
 
-    const firstNote = MidiNumbers.fromNote('c4');
-    const lastNote = MidiNumbers.fromNote('b4');
+    const firstNote = firstNoteProp || MidiNumbers.fromNote('c4');
+    const lastNote = lasNoteProp || MidiNumbers.fromNote('b4');
 
     const keyboardShortcuts = KeyboardShortcuts.create({
         firstNote,
@@ -24,11 +26,10 @@ export default function PianoComponent() {
 
         pianoSounds.start({ note: activeNote })
 
-        console.log(activeNote)
+        if (onPlayFunction) onPlayFunction(activeNote);
     };
 
     const stopNote = (midiNumber) => {
-        console.log(midiNumber)
     };
 
     return (
@@ -38,12 +39,12 @@ export default function PianoComponent() {
                     noteRange={{ first: firstNote, last: lastNote }}
                     playNote={playNote}
                     stopNote={stopNote}
-                    width={400}
+                    width={width || 400}
                     keyboardShortcuts={keyboardShortcuts}
-                    activeNotes={[60, 62, 64, 65, 67, 69, 71]}
+                    {...props}
                 />
                 :
-                "Piano is Loading"
+                "El piano esta cargando, espera un momento"
             }
         </section>
     );
