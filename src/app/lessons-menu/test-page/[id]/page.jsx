@@ -27,6 +27,7 @@ export default function TestsPage() {
             <GenericButton
                 text={"Empezar Prueba"}
                 buttonFunction={() => setStart(!start)}
+                styles={"px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl"}
             />
         </div>
     );

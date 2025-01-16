@@ -148,7 +148,7 @@ export default function SingInPage() {
 
                     {/* Login Button */}
                     <div className="mt-6">
-                        <SubmitButton text={'Registarse'} styles={"w-full"} />
+                        <SubmitButton text={'Registarse'} styles={"w-full px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full transform transition duration-300 hover:scale-105"} />
                     </div>
                 </form>
 

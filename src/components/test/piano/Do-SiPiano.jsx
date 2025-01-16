@@ -29,7 +29,7 @@ export default function DoSiPiano() {
 
     return (
         <div className="w-fit mx-auto">
-            <div className={`mx-auto my-5 w-14 h-14 text-white text-lg font-bold rounded-full flex items-center justify-center transition duration-300 ease-in-out ${showNotes?"bg-fuchsia-600":"bg-white"}`}>
+            <div className={`mx-auto my-5 w-14 h-14 text-white text-lg font-bold rounded-full flex items-center justify-center transition duration-300 ease-in-out ${showNotes?"bg-gradient-to-r from-fuchsia-500 to-purple-600":"bg-white"}`}>
                 {showNotes}
             </div>
 
@@ -40,6 +40,7 @@ export default function DoSiPiano() {
                     text={"Reproducir Ejemplo"}
                     buttonFunction={playSecuence}
                     disabledCondition={showNotes !== ""}
+                    styles={"px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl"}
                 />
             </div>
         </div>

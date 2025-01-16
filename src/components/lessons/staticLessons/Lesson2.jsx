@@ -97,25 +97,25 @@ export default function Lesson2({ lessonId }) {
                 </p>
 
                 <ul className="my-2 flex justify-evenly">
-                    <li className="w-12 h-12 bg-fuchsia-600 text-white text-lg rounded-full flex items-center justify-center">
+                    <li className="w-12 h-12 bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white text-lg rounded-full flex items-center justify-center">
                         <strong>DO</strong></li>
 
-                    <li className="w-12 h-12 bg-fuchsia-600 text-white text-lg rounded-full flex items-center justify-center">
+                    <li className="w-12 h-12 bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white text-lg rounded-full flex items-center justify-center">
                         <strong>RE</strong></li>
 
-                    <li className="w-12 h-12 bg-fuchsia-600 text-white text-lg rounded-full flex items-center justify-center">
+                    <li className="w-12 h-12 bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white text-lg rounded-full flex items-center justify-center">
                         <strong>MI</strong></li>
 
-                    <li className="w-12 h-12 bg-fuchsia-600 text-white text-lg rounded-full flex items-center justify-center">
+                    <li className="w-12 h-12 bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white text-lg rounded-full flex items-center justify-center">
                         <strong>FA</strong></li>
 
-                    <li className="w-12 h-12 bg-fuchsia-600 text-white text-lg rounded-full flex items-center justify-center">
+                    <li className="w-12 h-12 bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white text-lg rounded-full flex items-center justify-center">
                         <strong>SOL</strong></li>
 
-                    <li className="w-12 h-12 bg-fuchsia-600 text-white text-lg rounded-full flex items-center justify-center">
+                    <li className="w-12 h-12 bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white text-lg rounded-full flex items-center justify-center">
                         <strong>LA</strong></li>
 
-                    <li className="w-12 h-12 bg-fuchsia-600 text-white text-lg rounded-full flex items-center justify-center">
+                    <li className="w-12 h-12 bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white text-lg rounded-full flex items-center justify-center">
                         <strong>SI</strong></li>
                 </ul>
 

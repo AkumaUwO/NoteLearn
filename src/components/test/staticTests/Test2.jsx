@@ -115,7 +115,7 @@ export default function Test2({ setStart }) {
                 </h1>
 
                 <div className="w-full mt-5 flex justify-center">
-                    <div className="w-20 h-20 bg-fuchsia-600 text-white text-2xl font-bold rounded-full flex items-center justify-center">
+                    <div className="w-20 h-20 px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600  text-white text-2xl font-bold rounded-full flex items-center justify-center">
                         {actualNote[0]?.nota}
                     </div>
                 </div>

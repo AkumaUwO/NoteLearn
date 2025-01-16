@@ -19,7 +19,7 @@ export default function LessonsJumper({ id, test }) {
                 <div className="w-[120px] mx-2"></div>
             }
 
-            <div className="w-12 h-12 bg-fuchsia-600 text-white text-lg rounded-full flex items-center justify-center">
+            <div className="w-12 h-12 bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white text-lg rounded-full flex items-center justify-center">
                 {id}
             </div>
 
@@ -28,7 +28,7 @@ export default function LessonsJumper({ id, test }) {
                     className="mx-2"
                     href={`/lessons-menu/test-page/${id}`}
                 >
-                    <div className="flex items-center bg-fuchsia-600 p-2 rounded-full hover:bg-fuchsia-500 transition-all duration-300 ease-in-out">
+                    <div className="flex items-center p-2 rounded-full bg-gradient-to-r from-fuchsia-500 to-purple-600 shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl ">
                         <p className="text-white text-lg font-bold mx-3">
                             Prueba lo Aprendido
                         </p>

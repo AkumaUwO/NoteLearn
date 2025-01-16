@@ -24,6 +24,11 @@ export default function EndTestModal({ answers, trigger, win, restart }) {
                         Resultados:
                     </h1>
 
+                    <div
+                        className={`my-3 h-2 mx-auto rounded-full transition-all duration-1000 ${goodAnswers.length > 6 ? "bg-green-500" : goodAnswers.length > 3 ? "bg-yellow-500" : "bg-red-500"}`}
+                        style={{ width: barWidth }}
+                    />
+
                     {win ?
                         <h2 className="font-semibold">
                             Prueba completada
@@ -36,20 +41,16 @@ export default function EndTestModal({ answers, trigger, win, restart }) {
                 </div>
 
                 <div className="flex justify-evenly">
-                    <p className="font-semibold">{answers.length}/10 Respondidas</p>
+                    <p className="font-semibold">{answers.length}/10 Preguntas Respondidas</p>
 
-                    <p className="font-semibold">{goodAnswers.length}/{answers.length} Acertadas</p>
+                    <p className="font-semibold">{goodAnswers.length}/{answers.length} Preguntas Correctas</p>
                 </div>
 
-                <div
-                    className={`h-2 mx-auto rounded-full transition-all duration-1000 ${goodAnswers.length > 6 ? "bg-green-500" : goodAnswers.length > 3 ? "bg-yellow-500" : "bg-red-500"}`}
-                    style={{ width: barWidth }}
-                />
 
                 <div className="text-center font-bold mt-5">
                     <h2>Puntuación:</h2>
                     <div className="w-full flex justify-center">
-                        <div className="w-10 h-10 bg-fuchsia-600 text-white text-lg font-bold rounded-full flex items-center justify-center">
+                        <div className="w-10 h-10 px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white text-lg font-bold rounded-full flex items-center justify-center">
                             {points}
                         </div>
                     </div>
@@ -59,12 +60,12 @@ export default function EndTestModal({ answers, trigger, win, restart }) {
 
                 <div className="text-center mt-5">
                     <Link href={"/lessons-menu"}>
-                        <GenericButton text={"Volver al Menú de Lecciones"} />
+                        <GenericButton text={"Volver al Menú de Lecciones"} styles={"px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl"} />
                     </Link>
                 </div>
 
                 <div className="text-center mt-5">
-                    <GenericButton text={"Reintentar"} buttonFunction={restart}/>
+                    <GenericButton text={"Reintentar"} buttonFunction={restart} styles={"px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl"} />
                 </div>
             </div>
         </div>

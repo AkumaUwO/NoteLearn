@@ -26,7 +26,7 @@ export default function TestsMenu() {
                             className="flex items-center"
                         >
                             <div className="w-fit h-fit">
-                                <div className="w-14 h-14 bg-fuchsia-600 text-white font-extrabold text-lg rounded-full flex items-center justify-center">
+                                <div className="w-14 h-14 bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white font-extrabold text-lg rounded-full flex items-center justify-center">
                                     {index + 1}
                                 </div>
                             </div>
