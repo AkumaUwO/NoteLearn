@@ -5,13 +5,19 @@ import { useState } from "react";
 import PianoComponent from "@/components/test/piano/Piano-Componet";
 import GenericButton from "@/components/ui/utility/GenericButton";
 
-export default function Interv7() {
-    // Notas específicas en formato MIDI
-    const scale = [64, 64, 65, 67, 67, 65, 64, 62, 60, 60, 62, 64, 64, 62, 62, //Primera Frase
-        64, 64, 65, 67, 67, 65, 64, 62, 60, 60, 62, 64, 62, 60, 60 //Segunda Frase
+export default function IntervFurElise() {
+    // Notas específicas en formato MIDI para Für Elise con las octavas correctas
+    const scale = [
+        76, 75, 76, 75, 76,  // E5 D#5 E5 D#5 E5
+        71, 74, 72, 69,      // B4 D5 C5 A4
+        60, 64, 69, 71,      // C4 E4 A4 B4
+        64, 68, 71, 72       // E4 G#4 B4 C5
     ];
-    const notes = ["E", "E", "F", "G", "G", "F", "E", "D", "C", "C", "D", "E", "E", "D", "D", //Primera Frase
-        "E", "E", "F", "G", "G", "F", "E", "D", "C", "C", "D", "E", "D", "C", "C" //Segunda Frasa
+    const notes = [
+        "E5", "D#5", "E5", "D#5", "E5",  // E5 D#5 E5 D#5 E5
+        "B4", "D5", "C5", "A4",          // B4 D5 C5 A4
+        "C4", "E4", "A4", "B4",          // C4 E4 A4 B4
+        "E4", "G#4", "B4", "C5"          // E4 G#4 B4 C5
     ];
 
     const [activeNote, setActiveNote] = useState([]);
@@ -53,7 +59,7 @@ export default function Interv7() {
             {/* Botón de reproducción */}
             <div className="mt-5 mx-auto w-fit">
                 <GenericButton
-                    text={"Reproducir Ejemplo"}
+                    text={"Reproducir Für Elise"}
                     buttonFunction={playSecuence}
                     disabledCondition={showNotes !== ""}
                 />

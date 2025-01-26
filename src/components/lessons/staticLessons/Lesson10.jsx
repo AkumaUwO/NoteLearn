@@ -2,7 +2,7 @@ import LessonTittle from "../LessonsTittle";
 import LesssonCard from "../LessonCard";
 import LessonsJumper from "../LessonsJumper";
 import Interv6 from "@/components/test/piano/Interv6";
-import Himno from "@/components/test/piano/9naBeethoven";
+import Furelise from "@/components/test/piano/FürElise";
 
 export default function Lesson10({ lessonId }) {
     return (
@@ -53,8 +53,6 @@ export default function Lesson10({ lessonId }) {
             </LesssonCard>
 
             <Interv6 />
-
-            <Himno />
 
             <LessonsJumper id={10} test={false} />
         </div>
