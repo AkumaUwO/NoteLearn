@@ -125,7 +125,7 @@ export default function Test2({ setStart }) {
                     </div>
                 </div>
 
-
+                //Me cago en git
                 <div className="w-full mt-5 flex justify-center">
                     <PianoComponent onPlayFunction={handlerFunction} disabled={seconds === 0 || index === 10} />
                 </div>
