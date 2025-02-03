@@ -8,7 +8,7 @@ import GenericButton from "@/components/ui/utility/GenericButton";
 export default function DoSiPiano() {
 
     const scale = [60, 62, 64, 65, 67, 69, 71];
-    const notes = ["DO", "RE", "MI", "FA", "SOL", "LA", "SI"]
+    const notes = ["DO", "RE", "MI", "FA", "SOL", "LA", "SI"];
 
     const [activeNote, setActiveNote] = useState([]);
     const [showNotes, setShowNotes] = useState("");

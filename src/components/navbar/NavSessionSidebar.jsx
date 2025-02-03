@@ -8,7 +8,7 @@ import SidebarMenuLi from "./SidebarMenuLi";
 
 export default function NavSessionSidebar({ sessionSidebar, toggleSidebar }) {
 
-    const { userData } = useContext(UserContex);
+    const { userData, setUserData } = useContext(UserContex);
 
     return (
         <menu>
@@ -36,8 +36,11 @@ export default function NavSessionSidebar({ sessionSidebar, toggleSidebar }) {
 
                                     <SidebarMenuLi
                                         text={"Cerrar Sesión"}
-                                        href={"/signup-form"}
-                                        onClick={toggleSidebar}
+                                        href={"/"}
+                                        onClick={() => {
+                                            setUserData(null);
+                                            toggleSidebar();
+                                        }}
                                     />
                                 </div>
                                 :
