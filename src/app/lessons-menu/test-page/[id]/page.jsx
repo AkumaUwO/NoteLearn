@@ -8,7 +8,6 @@ import { PianoContex } from "@/contexts/PianoContext";
 import BaseTestStart from "@/components/test/testStart/BaseTestStart";
 
 import TestsSection from "@/components/test/TestsSecction";
-import GenericButton from "@/components/ui/utility/GenericButton";
 
 export default function TestsPage() {
 

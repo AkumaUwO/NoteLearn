@@ -28,11 +28,11 @@ export default function NavSessionSidebar({ sessionSidebar, toggleSidebar }) {
                             userData
                                 ?
                                 <div>
-                                    {/*<SidebarMenuLi
+                                    <SidebarMenuLi
                                         text={"Perfil de Usuario"}
-                                        href={"/login-form"}
+                                        href={"/profile"}
                                         onClick={toggleSidebar}
-                                    />*/}
+                                    />
 
                                     <SidebarMenuLi
                                         text={"Cerrar Sesión"}

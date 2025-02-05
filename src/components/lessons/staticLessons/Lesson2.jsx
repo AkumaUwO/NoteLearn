@@ -42,7 +42,7 @@ export default function Lesson4({ lessonId }) {
                 <img
                     src="/images/Leccion2/cifrado.jpg"
                     alt="Ubicación de la nota DO"
-                    className="w-[60%] h-auto mt-4 mx-auto rounded-md shadow-md"
+                    className="w-[60%] h-auto my-5 mx-auto rounded-md shadow-md"
                 />
 
             </LesssonCard>

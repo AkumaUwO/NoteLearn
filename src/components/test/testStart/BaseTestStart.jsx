@@ -1,9 +1,10 @@
 import GenericButton from "@/components/ui/utility/GenericButton";
+import TextSelector from "./TextSelector";
 
 export default function BaseTestStart({ testId, start, setStart }) {
 
-    const text = {
-        3: "En la siguiente prueba se te brindará un teclado, puedes utilizar el ratón o las letras para tocarlo. Se te mostrarán 15 notas musicales en pantalla, tu labor es tocar la tecla del teclado correspondiente a cada nota. Tendrás 15 segundos para hacerlo.",
+    const testTittle = {
+        3: "Notas Músicales",
     }
 
     return (
@@ -24,7 +25,7 @@ export default function BaseTestStart({ testId, start, setStart }) {
                 </div>
 
                 <h1 className="ml-5 my-3 text-3xl font-extrabold text-fuchsia-600 text-center">
-                    Notas Músicales
+                    {testTittle[testId]}
                 </h1>
 
             </div>
@@ -35,16 +36,14 @@ export default function BaseTestStart({ testId, start, setStart }) {
                     Preparate para una Prueba
                 </h1>
 
-                <p>
-                    {text[testId]}
-                </p>
+               <TextSelector testId={testId}/>
 
             </div>
 
             <GenericButton
                 text={"Empezar Prueba"}
                 buttonFunction={() => setStart(!start)}
-                styles={"px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl animate:pulse"}
+                styles={"px-8 py-4 bg-gradient-to-r from-fuchsia-500 to-purple-600 shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl"}
             />
         </section>
     );

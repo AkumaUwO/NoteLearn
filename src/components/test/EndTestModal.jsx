@@ -1,7 +1,7 @@
 import Link from "next/link";
 import GenericButton from "../ui/utility/GenericButton";
 
-export default function EndTestModal({ answers, trigger, win, restart }) {
+export default function EndTestModal({ testId, answers, trigger, win, restart }) {
 
     if (!trigger) return
 
@@ -56,16 +56,20 @@ export default function EndTestModal({ answers, trigger, win, restart }) {
                     </div>
                 </div>
 
-
-
                 <div className="text-center mt-5">
-                    <Link href={"/lessons-menu"}>
-                        <GenericButton text={"Volver al Menú de Lecciones"} styles={"px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl"} />
+                    <Link href={`/lessons-menu/lessons-page/${testId + 1}`}>
+                        <GenericButton text={"Siguiente Lección"} styles={"px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl"} />
                     </Link>
                 </div>
 
                 <div className="text-center mt-5">
                     <GenericButton text={"Reintentar"} buttonFunction={restart} styles={"px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl"} />
+                </div>
+
+                <div className="text-center mt-5">
+                    <Link href={"/lessons-menu"}>
+                        <GenericButton text={"Volver al Menú de Lecciones"} styles={"px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl"} />
+                    </Link>
                 </div>
             </div>
         </div>

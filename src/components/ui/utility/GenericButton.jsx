@@ -1,4 +1,5 @@
 export default function GenericButton({
+    children,
     text,
     type,
     buttonFunction,
@@ -15,6 +16,7 @@ export default function GenericButton({
             {...props}
         >
             {text}
+            {children}
         </button>
     );
 }

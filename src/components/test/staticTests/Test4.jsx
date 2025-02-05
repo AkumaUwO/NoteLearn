@@ -9,16 +9,14 @@ import PianoComponent from "../piano/Piano-Componet";
 import EndTestModal from "../EndTestModal";
 
 
-export default function Test3({ testId, setStart }) {
+export default function Test4({ testId, setStart }) {
 
     const notesMapping = [
-        { key: "C", nota: "DO" },
-        { key: "D", nota: "RE" },
-        { key: "E", nota: "MI" },
-        { key: "F", nota: "FA" },
-        { key: "G", nota: "SOL" },
-        { key: "A", nota: "LA" },
-        { key: "B", nota: "SI" }
+        { key: "Db", nota: "DO#" },
+        { key: "Eb", nota: "RE#" },
+        { key: "Gb", nota: "FA#" },
+        { key: "Ab", nota: "SOL#" },
+        { key: "Bb", nota: "LA#" }
     ];
 
     const [notes, setNotes] = useState(null);
@@ -33,13 +31,15 @@ export default function Test3({ testId, setStart }) {
 
     const fetchNotes = async () => {
         try {
-            const fetchedNotes = await get_test2Notes();
+            /*const fetchedNotes = await get_test2Notes();
 
             let truncatedNotes = [];
 
             fetchedNotes.testNotes.map((note) => {
                 truncatedNotes.push(note[0]);
-            });
+            });*/
+
+            const truncatedNotes = ["Db", "Eb", "Gb", "Ab", "Bb", "Db", "Eb", "Gb", "Ab", "Bb"]
 
             setNotes(truncatedNotes)
             setActualNote(notesMapping.filter(note => note.key.includes(truncatedNotes[0])))
@@ -51,7 +51,10 @@ export default function Test3({ testId, setStart }) {
 
 
     const handlerFunction = (playedNote) => {
-        playedNote = playedNote[0];
+
+        playedNote = playedNote.replace(/\d+/g, "");
+
+        console.log(playedNote);
 
         if (playedNote === actualNote[0].key) {
             setAnswers(prevAnswers => [
@@ -101,6 +104,8 @@ export default function Test3({ testId, setStart }) {
         if (seconds === 0) {
             setEndTest([true, false]);
         };
+
+        console.log(notes)
     }, [seconds]);
 
 
