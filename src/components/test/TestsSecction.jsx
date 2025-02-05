@@ -1,5 +1,5 @@
-import Test2 from "./staticTests/Test2"
+import Test3 from "./staticTests/Test3"
 
 export default function TestsSection({ testId, setStart }) {
-    if (testId === '2') return (<Test2 setStart={setStart} />)
+    if (testId === '3') return (<Test3 setStart={setStart} />)
 };

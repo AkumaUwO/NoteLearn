@@ -5,6 +5,8 @@ import { useParams } from "next/navigation";
 
 import { PianoContex } from "@/contexts/PianoContext";
 
+import BaseTestStart from "@/components/test/testStart/BaseTestStart";
+
 import TestsSection from "@/components/test/TestsSecction";
 import GenericButton from "@/components/ui/utility/GenericButton";
 
@@ -23,18 +25,16 @@ export default function TestsPage() {
     );
 
     if (!start) return (
-        <div className="w-full h-screen place-content-center text-center">
-            <GenericButton
-                text={"Empezar Prueba"}
-                buttonFunction={() => setStart(!start)}
-                styles={"px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl"}
-            />
-        </div>
+        <BaseTestStart
+            testId={testId.id}
+            start={start}
+            setStart={setStart}
+        />
     );
 
     return (
         <section className="p-5">
-            <TestsSection testId={testId.id} setStart={setStart}/>
+            <TestsSection testId={testId.id} setStart={setStart} />
         </section>
     );
 };
