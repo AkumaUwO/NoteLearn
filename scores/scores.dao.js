@@ -15,9 +15,9 @@ scoresSchema.statics = {
 
     },
 
-    edit: async function (FormId, updatedData) {
+    edit: async function (LessonNumber, updatedData) {
         try {
-            const updatedForm  = await this.findByIdAndUpdate(FormId, updatedData, { new: true });
+            const updatedForm  = await this.findByIdAndUpdate(LessonNumber, updatedData, { new: true });
             if (!updatedForm ) {
                 return 'Formulario no encontrado';
             }
