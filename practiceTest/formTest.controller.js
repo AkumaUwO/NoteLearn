@@ -25,6 +25,7 @@ function shuffleArray(array) {
     return array;
 }
 
+
 // Función para seleccionar una cantidad específica de notas
 function selectRandomNotes(notes, count) {
     const shuffledNotes = shuffleArray([...notes]); // Mezclamos las notas
