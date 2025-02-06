@@ -1,6 +1,18 @@
+"use client"
+
+import { useContext } from "react";
 import Link from "next/link";
 
+import { UserContex } from "@/contexts/UserContext";
+
 export default function LessonsJumper({ id, test }) {
+
+    const { userData, createNewScore } = useContext(UserContex);
+
+    const createScoreTrigger = async () => {
+        await createNewScore(id, userData.username, 10);
+    };
+
     return (
         <div className="my-5 mx-auto w-fit h-fit flex items-center">
             {id > 1 ?
@@ -41,6 +53,7 @@ export default function LessonsJumper({ id, test }) {
                 <Link
                     className="mx-2 flex items-center"
                     href={`/lessons-menu/lessons-page/${id + 1}`}
+                    onClick={createScoreTrigger}
                 >
                     <p className="font-bold underline decoration-2 decoration-fuchsia-500">Siguiente Lección</p>
                     <i className="ri-arrow-right-s-line text-2xl font-bold text-fuchsia-800"></i>

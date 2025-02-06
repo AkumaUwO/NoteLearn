@@ -61,7 +61,7 @@ export default function LoginPage() {
             };
 
             setUserData(loginResult.dataUser);
-            router.push("/");
+            router.push("/lessons-menu");
         } catch (error) {
             console.error(error);
         }

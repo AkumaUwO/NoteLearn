@@ -65,7 +65,7 @@ export default function SingInPage() {
             };
 
             setUserData(registerResult.dataUser);
-            router.push("/");
+            router.push("/lessons-menu");
         } catch (error) {
             console.error("handleSubmit error: ", error);
         };

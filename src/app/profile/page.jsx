@@ -4,11 +4,11 @@ import { useContext } from "react";
 
 import { UserContex } from "@/contexts/UserContext";
 
-import LesssonCard from "@/components/lessons/LessonCard";
-
 export default function UserProfile() {
 
     const { userData } = useContext(UserContex);
+
+    if (!userData) return;
 
     return (
         <section className="w-full">

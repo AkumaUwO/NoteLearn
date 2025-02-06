@@ -7,7 +7,6 @@ import { UserContex } from "@/contexts/UserContext";
 
 import GenericButton from "@/components/ui/utility/GenericButton";
 import AppLogo from "@/components/navbar/AppLogo";
-import { SERVER_URL } from "@/config";
 
 export default function Home() {
 
@@ -17,10 +16,7 @@ export default function Home() {
     const fadeInElements = document.querySelectorAll(".fade-in");
     fadeInElements.forEach((el, index) =>
       setTimeout(() => el.classList.add("opacity-100", "translate-y-0"), index * 200)
-    );
-
-    console.log(SERVER_URL);
-    
+    );  
   }, []);
 
   return (

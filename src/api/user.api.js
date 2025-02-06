@@ -1,18 +1,7 @@
 
 import axiosInstance from "@/lib/axios";
 
-
-/**************************{ Get }**************************/
-
-export const get_UserById = async (data) => {
-    const response = await axiosInstance.post('/login/api/get-user-by-id', data);
-    return response.data
-};
-
-export const get_UserByEmail = async (data) => {
-    const response = await axiosInstance.post('/login/api/get-user-by-email', data);
-    return response.data
-};
+/**************************{ Auth }**************************/
 
 export const user_Login = async (data) => {
     try {
@@ -26,12 +15,30 @@ export const user_Login = async (data) => {
 };
 
 
+/**************************{ Get }**************************/
+
+export const get_UserSocres = async () => {
+    const response = await axiosInstance.get('/getAllScores');
+    return response.data
+};
+
 
 /**************************{ Create }**************************/
 
 export const registerUser = async (data) => {
     try {
         const response = await axiosInstance.post('/register', data);
+
+        return response.data;
+    } catch (error) {
+        console.log(error);  
+        return error.response.data;
+    };
+};
+
+export const create_score = async (data) => {
+    try {
+        const response = await axiosInstance.post('/uploadScore', data);
 
         return response.data;
     } catch (error) {
