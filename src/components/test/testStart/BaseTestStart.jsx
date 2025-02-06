@@ -3,6 +3,17 @@ import TextSelector from "./TextSelector";
 
 export default function BaseTestStart({ testId, testTittle, start, setStart }) {
 
+    const IDS = {
+        3: 1,
+        4: 2,
+        6: 3,
+        7: 4,
+        8: 5,
+        9: 6,
+        10: 7,
+        11: 8
+    };
+
     return (
         <section className="w-full h-screen place-content-center text-center">
 
@@ -15,7 +26,7 @@ export default function BaseTestStart({ testId, testTittle, start, setStart }) {
                     </h2>
 
                     <div className="w-12 h-12 bg-white text-lg rounded-full flex items-center justify-center font-bold text-fuchsia-700">
-                        {testId - 2}
+                        {IDS[testId]}
                     </div>
 
                 </div>

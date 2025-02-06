@@ -21,8 +21,6 @@ export default function TestsMenu() {
             lessons.push(false);
         };
 
-        console.log(lessons);
-
         setUserLessons(lessons);
     };
 

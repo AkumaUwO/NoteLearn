@@ -12,7 +12,8 @@ export default function EndTestModal({
     answers,
     trigger,
     win,
-    restart
+    restart,
+    maxAnswers
 }) {
 
     const { userScores, saveOrUpdateScore } = useContext(UserContex);
@@ -85,7 +86,7 @@ export default function EndTestModal({
                 </div>
 
                 <div className="flex justify-evenly">
-                    <p className="font-semibold">{answers.length}/10 Preguntas Respondidas</p>
+                    <p className="font-semibold">{answers.length}/{maxAnswers} Preguntas Respondidas</p>
 
                     <p className="font-semibold">{goodAnswers.length}/{answers.length} Preguntas Correctas</p>
                 </div>

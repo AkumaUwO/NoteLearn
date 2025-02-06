@@ -15,7 +15,13 @@ export default function TestsPage() {
 
     const TEST_TITTLES = {
         3: "Notas Músicales",
-        4: "Sostenidos y Bemoles"
+        4: "Sostenidos y Bemoles",
+        6: "Intervalos de 2da",
+        7: "Intervalos de 3ra",
+        8: "Intervalos de 4ta",
+        9: "Intervalos de 5ta",
+        10: "Intervalos de 6ta",
+        11: "Intervalos de 7ma"
     };
 
     const [start, setStart] = useState(false);

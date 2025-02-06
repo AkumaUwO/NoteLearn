@@ -130,7 +130,7 @@ export default function Test3({ testId, testTittle, setStart }) {
                 </div>
 
             </div>
-            <EndTestModal testId={testId} testTittle={testTittle} answers={answers} win={endTest[1]} trigger={endTest[0]} restart={restart} />
+            <EndTestModal testId={testId} testTittle={testTittle} answers={answers} win={endTest[1]} trigger={endTest[0]} restart={restart} maxAnswers={10}/>
         </div>
     )
 };

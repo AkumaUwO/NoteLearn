@@ -46,10 +46,15 @@ export default function Test4({ testId, testTittle, setStart }) {
                 truncatedNotes.push(note[0]);
             });*/
 
-            const truncatedNotes = ["Db", "Eb", "Gb", "Ab", "Bb", "Db", "Eb", "Gb", "Ab", "Bb"]
+            const truncatedNotes = Array.from({ length: 10 }, () => {
+                return BASE_NOTES[Math.floor(Math.random() * BASE_NOTES.length)];
+            });
+
+            console.log(truncatedNotes);
+
 
             setNotes(truncatedNotes)
-            setActualNote(notesMapping.filter(note => note.key.includes(truncatedNotes[0])))
+            setActualNote(notesMapping.filter(note => note.nota.includes(truncatedNotes[0])))
 
         } catch (error) {
             console.error("fetchNotes: ", error);
@@ -75,7 +80,7 @@ export default function Test4({ testId, testTittle, setStart }) {
         }
 
 
-        setActualNote(notesMapping.filter(note => note.key.includes(notes[index + 1])))
+        setActualNote(notesMapping.filter(note => note.nota.includes(notes[index + 1])))
         setIndex(index + 1);
 
         if (index + 1 === 10) {
@@ -121,11 +126,11 @@ export default function Test4({ testId, testTittle, setStart }) {
             <div className="mx-auto mt-5 border rounded-xl border-2 shadow-lg px-4 py-2 bg-transparent">
 
                 <h1 className="text-xl font-semibold text-fuchsia-600">
-                    Pulsa la <strong>tecla</strong> correcta en base a la <strong>nota natural</strong> dada:
+                    Pulsa la <strong>tecla</strong> correcta en base a la <strong>alteración</strong> dada:
                 </h1>
 
                 <div className="w-full mt-5 flex justify-center">
-                    <div className="w-20 h-20 px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600  text-white text-2xl font-bold rounded-full flex items-center justify-center">
+                    <div className="w-28 h-20 px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600  text-white text-2xl font-bold rounded-full flex items-center justify-center">
                         {actualNote[0]?.nota}
                     </div>
                 </div>
@@ -140,7 +145,7 @@ export default function Test4({ testId, testTittle, setStart }) {
                 </div>
 
             </div>
-            <EndTestModal testId={testId} testTittle={testTittle} answers={answers} win={endTest[1]} trigger={endTest[0]} restart={restart} />
+            <EndTestModal testId={testId} testTittle={testTittle} answers={answers} win={endTest[1]} trigger={endTest[0]} restart={restart} maxAnswers={10} />
         </div>
     )
 };

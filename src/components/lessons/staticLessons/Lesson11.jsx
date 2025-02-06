@@ -68,7 +68,7 @@ export default function Lesson11({ lessonId }) {
 
             <Interv7 />
 
-            <LessonsJumper id={11} test={false} />
+            <LessonsJumper id={11} test={true} />
         </div>
     );
 };

@@ -35,7 +35,7 @@ export default function ScoresTable({ scores }) {
                                 </div>
                             </th>
                             <th className="font-normal py-1.5 px-4">
-                                <Link href={`/lessons-menu/lessons-page/${score.lessonNumber[0]}`}><strong>{LESSON_ARRAY[score.lessonNumber[0]].text}</strong></Link>
+                                <Link href={`/lessons-menu/lessons-page/${score.lessonNumber[0]}`}><strong>{LESSON_ARRAY[score.lessonNumber[0] - 1].text}</strong></Link>
                             </th>
                             <th className="font-normal py-1.5 px-4">
                                 <div className="flex items-center w-fit bg-gradient-to-r from-fuchsia-500 to-purple-600 p-2 rounded-full mx-auto">
