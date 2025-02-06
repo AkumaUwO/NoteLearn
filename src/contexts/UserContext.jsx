@@ -72,6 +72,12 @@ export const UserProvider = ({ children }) => {
         };
     };
 
+    const logout = () => {
+        setUserData(null);
+        setUserScores(null);
+        sessionStorage.removeItem("user");
+    };
+
 
     useEffect(() => {
         if (!userData && userData !== null) {
@@ -95,7 +101,8 @@ export const UserProvider = ({ children }) => {
             setUserScores,
 
             fetchScores,
-            saveOrUpdateScore
+            saveOrUpdateScore,
+            logout
         }}>
             {children}
         </UserContex.Provider>

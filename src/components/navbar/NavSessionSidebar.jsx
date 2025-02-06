@@ -8,7 +8,7 @@ import SidebarMenuLi from "./SidebarMenuLi";
 
 export default function NavSessionSidebar({ sessionSidebar, toggleSidebar }) {
 
-    const { userData, setUserData } = useContext(UserContex);
+    const { userData, logout } = useContext(UserContex);
 
     return (
         <menu>
@@ -44,9 +44,8 @@ export default function NavSessionSidebar({ sessionSidebar, toggleSidebar }) {
                                         text={"Cerrar Sesión"}
                                         href={"/"}
                                         onClick={() => {
-                                            setUserData(null);
+                                            logout();
                                             toggleSidebar();
-                                            sessionStorage.removeItem("user");
                                         }}
                                     />
                                 </div>
