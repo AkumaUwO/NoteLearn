@@ -1,7 +1,21 @@
+"use client"
+
+import { useContext } from "react";
 import Link from "next/link";
+
+import { UserContex } from "@/contexts/UserContext";
 import GenericButton from "../ui/utility/GenericButton";
 
-export default function EndTestModal({ testId, answers, trigger, win, restart }) {
+export default function EndTestModal({
+    testId,
+    testTittle,
+    answers,
+    trigger,
+    win,
+    restart
+}) {
+
+    const { userScores, saveOrUpdateScore } = useContext(UserContex);
 
     if (!trigger) return
 
@@ -9,7 +23,17 @@ export default function EndTestModal({ testId, answers, trigger, win, restart })
 
     const points = goodAnswers.length * 10;
 
+    const oldPoint = userScores.find((score) => {
+        if (score.lessonNumber[0] == testId) {
+            return score.score[0]
+        }
+    })
+
     const barWidth = `${goodAnswers.length * 10}%`;
+
+    const scoreHandeler = async () => {
+        saveOrUpdateScore()
+    }
 
     return (
         <div>
@@ -20,6 +44,26 @@ export default function EndTestModal({ testId, answers, trigger, win, restart })
             >
 
                 <div className="text-center">
+                    <div className="flex items-center justify-center mb-5">
+
+                        <div className="flex items-center bg-gradient-to-r from-fuchsia-500 to-purple-600 p-2 rounded-full">
+
+                            <h2 className="text-white text-lg font-bold mx-3">
+                                Prueba:
+                            </h2>
+
+                            <div className="w-12 h-12 bg-white text-lg rounded-full flex items-center justify-center font-bold text-fuchsia-700">
+                                {testId - 2}
+                            </div>
+
+                        </div>
+
+                        <h1 className="ml-5 my-3 text-3xl font-extrabold text-fuchsia-600 text-center">
+                            {testTittle[testId]}
+                        </h1>
+
+                    </div>
+
                     <h1 className="text-xl font-bold text-fuchsia-600">
                         Resultados:
                     </h1>

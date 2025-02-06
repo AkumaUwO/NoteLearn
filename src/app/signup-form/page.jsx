@@ -64,6 +64,8 @@ export default function SingInPage() {
                 return
             };
 
+            sessionStorage.setItem("user", JSON.stringify(registerResult.dataUser));
+
             setUserData(registerResult.dataUser);
             router.push("/lessons-menu");
         } catch (error) {

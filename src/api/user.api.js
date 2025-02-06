@@ -60,6 +60,17 @@ export const update_user = async (id, data) => {
     };
 };
 
+export const upadate_score = async (id, data) => {
+    try {
+        const response = await axiosInstance.put(`/updateScore/${id}`, data);
+
+        return response.data;
+    } catch (error) {
+        console.log(error);  
+        return error.response.data;
+    };
+};
+
 
 /**************************{ Delete }**************************/
 

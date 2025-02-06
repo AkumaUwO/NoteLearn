@@ -35,11 +35,18 @@ export default function NavSessionSidebar({ sessionSidebar, toggleSidebar }) {
                                     />
 
                                     <SidebarMenuLi
+                                        text={"Menú de Lecciones"}
+                                        href={"/lessons-menu"}
+                                        onClick={toggleSidebar}
+                                    />
+
+                                    <SidebarMenuLi
                                         text={"Cerrar Sesión"}
                                         href={"/"}
                                         onClick={() => {
                                             setUserData(null);
                                             toggleSidebar();
+                                            sessionStorage.removeItem("user");
                                         }}
                                     />
                                 </div>

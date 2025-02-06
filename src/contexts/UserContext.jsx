@@ -1,21 +1,30 @@
 'use client'
 
-import { 
-    createContext,  
-    useState, 
-    useEffect 
+import {
+    createContext,
+    useState,
+    useEffect
 } from "react";
 
-import { get_UserSocres, create_score } from "@/api/user.api";
+import { get_UserSocres, create_score, upadate_score } from "@/api/user.api";
 
 export const UserContex = createContext();
 
 export const UserProvider = ({ children }) => {
 
-    const [userData, setUserData] = useState(null);
+    const [userData, setUserData] = useState();
     const [auth, setAuth] = useState();
 
     const [userScores, setUserScores] = useState();
+
+    const getUserSession = () => {
+        if (typeof window !== "undefined") {
+            const storedUser = sessionStorage.getItem("user");
+            const user = storedUser ? JSON.parse(storedUser) : null;
+
+            setUserData(user);
+        };
+    };
 
     const fetchScores = async () => {
         if (!userData) return;
@@ -26,47 +35,48 @@ export const UserProvider = ({ children }) => {
             return score.username[0] === userData.username;
         });
 
-        console.log(filteredScores)
-        
         setUserScores(filteredScores);
     };
 
-    
+    const saveOrUpdateScore = async (id, score) => {
+        try {
+            const oldScore = userScores.find((score) => {
+                return score.lessonNumber[0] == id
+            });
 
-    const createNewScore = async (id, username, score) => {
-  
-        const oldScore = userScores.some((score) => {
-            return score.lessonNumber[0] == id
-        });
-
-        if (oldScore) {
-            try {
-                
-            
-            } catch (error) {
-                console.log("createNewScore: ", error);
-            }
-        } else {
-            try {
+            if (oldScore) {
                 const data = {
                     score: score,
-                    username: username,
+                };
+
+                const result = await upadate_score(oldScore._id, data);
+                await fetchScores();
+
+                return result
+            } else {
+                const data = {
+                    score: score,
+                    username: userData.username,
                     lessonNumber: id
                 };
-            
+
                 const result = await create_score(data);
                 await fetchScores();
-    
+
                 return result
-            } catch (error) {
-                console.log("createNewScore: ", error);
             };
-        }; 
+        } catch (error) {
+            console.log("createNewScore: ", error);
+        };
     };
 
 
     useEffect(() => {
-        if(!userScores && userData) {
+        if (!userData && userData !== null) {
+            getUserSession()
+        };
+
+        if (!userScores && userData) {
             fetchScores()
         };
     }, [userData]);
@@ -83,7 +93,7 @@ export const UserProvider = ({ children }) => {
             setUserScores,
 
             fetchScores,
-            createNewScore
+            saveOrUpdateScore
         }}>
             {children}
         </UserContex.Provider>

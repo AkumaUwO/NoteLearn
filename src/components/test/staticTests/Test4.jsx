@@ -9,7 +9,7 @@ import PianoComponent from "../piano/Piano-Componet";
 import EndTestModal from "../EndTestModal";
 
 
-export default function Test4({ testId, setStart }) {
+export default function Test4({ testId, testTittle, setStart }) {
 
     const notesMapping = [
         { key: "Db", nota: "DO#" },
@@ -135,7 +135,7 @@ export default function Test4({ testId, setStart }) {
                 </div>
 
             </div>
-            <EndTestModal testId={testId} answers={answers} win={endTest[1]} trigger={endTest[0]} restart={restart}/>
+            <EndTestModal testId={testId} testTittle={testTittle} answers={answers} win={endTest[1]} trigger={endTest[0]} restart={restart} />
         </div>
     )
 };

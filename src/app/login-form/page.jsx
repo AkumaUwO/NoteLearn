@@ -60,6 +60,8 @@ export default function LoginPage() {
                 return;
             };
 
+            sessionStorage.setItem("user", JSON.stringify(loginResult.dataUser));
+
             setUserData(loginResult.dataUser);
             router.push("/lessons-menu");
         } catch (error) {

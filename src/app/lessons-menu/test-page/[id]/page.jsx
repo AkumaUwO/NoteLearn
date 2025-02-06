@@ -10,8 +10,12 @@ import BaseTestStart from "@/components/test/testStart/BaseTestStart";
 import TestsSection from "@/components/test/TestsSecction";
 
 export default function TestsPage() {
-
+    
     const testId = useParams();
+
+    const TEST_TITTLES = {
+        3: "Notas Músicales",
+    };
 
     const [start, setStart] = useState(false);
 
@@ -28,12 +32,13 @@ export default function TestsPage() {
             testId={testId.id}
             start={start}
             setStart={setStart}
+            testTittle={TEST_TITTLES}
         />
     );
 
     return (
         <section className="p-5">
-            <TestsSection testId={testId.id} setStart={setStart} />
+            <TestsSection testId={testId.id} setStart={setStart} testTittle={TEST_TITTLES}/>
         </section>
     );
 };

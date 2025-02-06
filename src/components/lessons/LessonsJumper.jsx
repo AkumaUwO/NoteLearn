@@ -7,10 +7,10 @@ import { UserContex } from "@/contexts/UserContext";
 
 export default function LessonsJumper({ id, test }) {
 
-    const { userData, createNewScore } = useContext(UserContex);
+    const { saveOrUpdateScore } = useContext(UserContex);
 
     const createScoreTrigger = async () => {
-        await createNewScore(id, userData.username, 10);
+        await saveOrUpdateScore(id, 10);
     };
 
     return (

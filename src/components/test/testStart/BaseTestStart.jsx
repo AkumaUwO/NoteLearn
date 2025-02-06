@@ -1,11 +1,7 @@
 import GenericButton from "@/components/ui/utility/GenericButton";
 import TextSelector from "./TextSelector";
 
-export default function BaseTestStart({ testId, start, setStart }) {
-
-    const testTittle = {
-        3: "Notas Músicales",
-    }
+export default function BaseTestStart({ testId, testTittle, start, setStart }) {
 
     return (
         <section className="w-full h-screen place-content-center text-center">
