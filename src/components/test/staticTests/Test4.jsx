@@ -12,12 +12,19 @@ import EndTestModal from "../EndTestModal";
 export default function Test4({ testId, testTittle, setStart }) {
 
     const notesMapping = [
-        { key: "Db", nota: "DO#" },
-        { key: "Eb", nota: "RE#" },
-        { key: "Gb", nota: "FA#" },
-        { key: "Ab", nota: "SOL#" },
-        { key: "Bb", nota: "LA#" }
+        { key: "Db", nota: "DO #" },
+        { key: "Eb", nota: "RE #" },
+        { key: "Gb", nota: "FA #" },
+        { key: "Ab", nota: "SOL #" },
+        { key: "Bb", nota: "LA #" },
+        { key: "Db", nota: "RE ♭" },
+        { key: "Eb", nota: "MI ♭" },
+        { key: "Gb", nota: "SOL ♭" },
+        { key: "Ab", nota: "LA ♭" },
+        { key: "Bb", nota: "SI ♭" },
     ];
+
+    const BASE_NOTES = ["DO #", "RE #", "FA #", "SOL #", "LA #", "RE ♭", "MI ♭", "SOL ♭", "LA ♭", "SI ♭"]
 
     const [notes, setNotes] = useState(null);
     const [actualNote, setActualNote] = useState("");
@@ -53,8 +60,6 @@ export default function Test4({ testId, testTittle, setStart }) {
     const handlerFunction = (playedNote) => {
 
         playedNote = playedNote.replace(/\d+/g, "");
-
-        console.log(playedNote);
 
         if (playedNote === actualNote[0].key) {
             setAnswers(prevAnswers => [

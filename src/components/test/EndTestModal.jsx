@@ -95,16 +95,20 @@ export default function EndTestModal({
                     <div>
                         <h2>Puntuación:</h2>
                         <div className="w-full flex justify-center">
-                            <div className="w-10 h-10 px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white text-lg font-bold rounded-full flex items-center justify-center">
-                                {points}
+                            <div className="flex items-center w-fit bg-gradient-to-r from-fuchsia-500 to-purple-600 p-2 rounded-full mx-auto">
+                                <div className="w-10 h-10 bg-white text-lg rounded-full flex items-center justify-center font-bold text-fuchsia-700">
+                                    {points}
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div>
                         <h2>Tu mejor Puntuación:</h2>
                         <div className="w-full flex justify-center">
-                            <div className="w-10 h-10 px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white text-lg font-bold rounded-full flex items-center justify-center">
-                                {oldPoints ? oldPoints.score[0] : points}
+                            <div className="flex items-center w-fit bg-gradient-to-r from-fuchsia-500 to-purple-600 p-2 rounded-full mx-auto">
+                                <div className="w-10 h-10 bg-white text-lg rounded-full flex items-center justify-center font-bold text-fuchsia-700">
+                                    {oldPoints ? oldPoints.score[0] : points}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -117,13 +121,13 @@ export default function EndTestModal({
                 </div>
 
                 <div className="text-center mt-5">
-                    <GenericButton 
-                    text={"Reintentar"} 
-                    buttonFunction={()=>{
-                        scoreHandeler();
-                        restart();
-                    }} 
-                    styles={"px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl"}/>
+                    <GenericButton
+                        text={"Reintentar"}
+                        buttonFunction={() => {
+                            scoreHandeler();
+                            restart();
+                        }}
+                        styles={"px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl"} />
                 </div>
 
                 <div className="text-center mt-5">

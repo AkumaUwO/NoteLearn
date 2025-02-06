@@ -3,10 +3,11 @@
 import { useContext } from "react";
 
 import { UserContex } from "@/contexts/UserContext";
+import ScoresTable from "@/components/profile/ScoresTable";
 
 export default function UserProfile() {
 
-    const { userData } = useContext(UserContex);
+    const { userData, userScores } = useContext(UserContex);
 
     if (!userData) return;
 
@@ -21,9 +22,7 @@ export default function UserProfile() {
                     </div>
                 </div>
 
-                <div className="mx-auto mt-5 w-full border rounded-xl border-2 shadow-lg px-4 py-2 bg-transparent">
-                    hola
-                </div>
+                <ScoresTable scores={userScores}/>
 
             </div>
         </section>

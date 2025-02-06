@@ -15,6 +15,7 @@ export default function TestsPage() {
 
     const TEST_TITTLES = {
         3: "Notas Músicales",
+        4: "Sostenidos y Bemoles"
     };
 
     const [start, setStart] = useState(false);
