@@ -23,17 +23,17 @@ export default function EndTestModal({
 
     const points = goodAnswers.length * 10;
 
-    const oldPoint = userScores.find((score) => {
+    const oldPoints = userScores.find((score) => {
         if (score.lessonNumber[0] == testId) {
             return score.score[0]
-        }
-    })
+        };
+    });
 
     const barWidth = `${goodAnswers.length * 10}%`;
 
     const scoreHandeler = async () => {
-        saveOrUpdateScore()
-    }
+        saveOrUpdateScore(testId, points);
+    };
 
     return (
         <div>
@@ -91,28 +91,44 @@ export default function EndTestModal({
                 </div>
 
 
-                <div className="text-center font-bold mt-5">
-                    <h2>Puntuación:</h2>
-                    <div className="w-full flex justify-center">
-                        <div className="w-10 h-10 px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white text-lg font-bold rounded-full flex items-center justify-center">
-                            {points}
+                <div className="text-center font-bold mt-5 flex justify-evenly">
+                    <div>
+                        <h2>Puntuación:</h2>
+                        <div className="w-full flex justify-center">
+                            <div className="w-10 h-10 px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white text-lg font-bold rounded-full flex items-center justify-center">
+                                {points}
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>Tu mejor Puntuación:</h2>
+                        <div className="w-full flex justify-center">
+                            <div className="w-10 h-10 px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white text-lg font-bold rounded-full flex items-center justify-center">
+                                {oldPoints ? oldPoints.score[0] : points}
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div className="text-center mt-5">
-                    <Link href={`/lessons-menu/lessons-page/${testId + 1}`}>
+                    <Link href={`/lessons-menu/lessons-page/${testId + 1}`} onClick={scoreHandeler}>
                         <GenericButton text={"Siguiente Lección"} styles={"px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl"} />
                     </Link>
                 </div>
 
                 <div className="text-center mt-5">
-                    <GenericButton text={"Reintentar"} buttonFunction={restart} styles={"px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl"} />
+                    <GenericButton 
+                    text={"Reintentar"} 
+                    buttonFunction={()=>{
+                        scoreHandeler();
+                        restart();
+                    }} 
+                    styles={"px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl"}/>
                 </div>
 
                 <div className="text-center mt-5">
                     <Link href={"/lessons-menu"}>
-                        <GenericButton text={"Volver al Menú de Lecciones"} styles={"px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl"} />
+                        <GenericButton text={"Volver al Menú de Lecciones"} styles={"px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl"} onClick={scoreHandeler} />
                     </Link>
                 </div>
             </div>

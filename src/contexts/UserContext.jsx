@@ -45,14 +45,16 @@ export const UserProvider = ({ children }) => {
             });
 
             if (oldScore) {
-                const data = {
-                    score: score,
+                if (score > oldScore.score) {
+                    const data = {
+                        score: score,
+                    };
+    
+                    const result = await upadate_score(oldScore._id, data);
+                    await fetchScores();
+    
+                    return result
                 };
-
-                const result = await upadate_score(oldScore._id, data);
-                await fetchScores();
-
-                return result
             } else {
                 const data = {
                     score: score,
