@@ -70,7 +70,7 @@ export default function IntervalsTest({ testId, testTittle, setStart, interval }
 
         const formatedNote = notesMapping.find(note => note.key.includes(playedNote))
 
-        console.log(formatedNote.auxKey === notes[index].targetNote, formatedNote, actualNote, notes[index]);
+        //console.log(formatedNote.auxKey === notes[index].targetNote, formatedNote, actualNote, notes[index]);
 
 
         if (formatedNote.auxKey === notes[index].targetNote) {
