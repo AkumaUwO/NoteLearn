@@ -12,7 +12,7 @@ export const PianoContex = createContext();
 
 export const PianoProvider = ({ children }) => {
 
-    const [isPianoLoaded, setPianoLoaded] = useState(true);
+    const [isPianoLoaded, setPianoLoaded] = useState(false);
     const [pianoSounds, setPianoSounds] = useState();
 
     const pianoLoader = () => {
