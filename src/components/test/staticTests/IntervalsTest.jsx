@@ -26,7 +26,7 @@ export default function IntervalsTest({ testId, testTittle, setStart, interval }
         { key: "Bb", auxKey: "A#", nota: "LA #" },
     ];
 
-    const intervals = ["major", "minor", /*"augmented"*/];
+    const intervals = ["major", /*"minor", "augmented"*/];
 
     const [notes, setNotes] = useState(null);
     const [actualNote, setActualNote] = useState("");
