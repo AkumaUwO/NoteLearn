@@ -85,8 +85,6 @@ export default function IntervalsTest({ testId, testTittle, setStart, interval }
             ]);
         };
 
-        console.log(index);
-
         setActualNote(notesMapping.find(note => note.key.includes(notes[index + 1]?.note)))
         setIndex(index + 1);
 
