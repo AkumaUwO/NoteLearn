@@ -41,7 +41,7 @@ export default function EndTestModal({
             <div className="fixed inset-0 bg-black opacity-50 z-10" />
 
             <div
-                className={`w-2/3 h-fit m-auto ${goodAnswers.length > 6 ? "bg-green-50" : goodAnswers.length > 3 ? "bg-yellow-50" : "bg-red-50"} p-5 rounded-2xl shadow-lg inset-0 fixed z-50`}
+                className={`w-full sm:w-2/3 h-fit m-auto ${goodAnswers.length > 6 ? "bg-green-50" : goodAnswers.length > 3 ? "bg-yellow-50" : "bg-red-50"} p-5 rounded-2xl shadow-lg inset-0 fixed z-50`}
             >
 
                 <div className="text-center">
@@ -86,9 +86,15 @@ export default function EndTestModal({
                 </div>
 
                 <div className="flex justify-evenly">
-                    <p className="font-semibold">{answers.length}/{maxAnswers} Preguntas Respondidas</p>
+                    <div>
+                        <p className="font-semibold">Preguntas Respondidas</p>
+                        <p className="font-semibold w-fit mx-auto">{answers.length}/{maxAnswers}</p>
+                    </div>
 
-                    <p className="font-semibold">{goodAnswers.length}/{answers.length} Preguntas Correctas</p>
+                    <div>
+                        <p className="font-semibold">Preguntas Correctas</p>
+                        <p className="font-semibold w-fit mx-auto">{goodAnswers.length}/{answers.length} </p>
+                    </div>
                 </div>
 
 

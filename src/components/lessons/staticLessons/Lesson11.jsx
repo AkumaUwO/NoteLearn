@@ -6,7 +6,7 @@ import Interv7M from "@/components/test/piano/Interv7M";
 
 export default function Lesson11({ lessonId }) {
     return (
-        <div className="w-full h-fit p-5">
+        <div className="w-full h-fit sm:p-5">
 
             <LessonTittle tittle={"Explorando los Intervalos de Séptima"} lessonId={lessonId} />
 

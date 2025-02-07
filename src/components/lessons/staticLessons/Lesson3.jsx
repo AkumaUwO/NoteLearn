@@ -5,7 +5,7 @@ import DoSiPiano from "@/components/test/piano/Do-SiPiano";
 
 export default function Lesson3({ lessonId }) {
     return (
-        <div className="w-full h-fit p-5">
+        <div className="w-full h-fit sm:p-5">
 
             <LessonTittle tittle={"Lección de Piano: Introducción y Primeros Pasos"} lessonId={lessonId} />
 
@@ -58,7 +58,7 @@ export default function Lesson3({ lessonId }) {
                 <img
                     src="/images/Leccion3/tiposdepiano.jpg"
                     alt="Tipos de piano"
-                    className="w-[60%] h-auto mt-4 mx-auto rounded-md shadow-md"
+                    className="w-full sm:w-[60%] h-auto mt-4 mx-auto rounded-md shadow-md"
                 />
                 <br /><br />
             </LesssonCard>
@@ -81,7 +81,7 @@ export default function Lesson3({ lessonId }) {
                 <img
                     src="/images/Leccion3/do.jpg"
                     alt="Ubicación de la nota DO"
-                    className="w-[60%] h-auto mt-4 mx-auto rounded-md shadow-md"
+                    className="w-full sm:w-[60%] h-auto mt-4 mx-auto rounded-md shadow-md"
                 />
                 <br /><br />
             </LesssonCard>
@@ -124,11 +124,11 @@ export default function Lesson3({ lessonId }) {
                         en el piano, debes presionar las teclas blancas.</strong>
                 </p>
                 
-                <DoSiPiano/>
-                
                 <br /><br />
                 
             </LesssonCard>
+
+            <DoSiPiano/>
 
             <LessonsJumper id={3} test={true} />
             

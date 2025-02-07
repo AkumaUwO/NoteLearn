@@ -5,7 +5,7 @@ import SustainPiano from "@/components/test/piano/SustainPiano";
 
 export default function Lesson4({ lessonId }) {
     return (
-        <div className="w-full h-fit p-5">
+        <div className="w-full h-fit sm:p-5">
 
             <LessonTittle tittle={"Lección de Piano: Alteraciones (Sostenidos y Bemoles)"} lessonId={lessonId} />
 
@@ -44,7 +44,7 @@ export default function Lesson4({ lessonId }) {
                 <img
                     src="/images/Leccion4/sostenidos.png"
                     alt="Sostenido"
-                    className="w-[60%] h-auto mt-4 mx-auto rounded-md shadow-md"
+                    className="w-full sm:w-[60%]h-auto mt-4 mx-auto rounded-md shadow-md"
                 />
                 <br />
             </LesssonCard>
@@ -64,7 +64,7 @@ export default function Lesson4({ lessonId }) {
                 <img
                     src="/images/Leccion4/bemoles.png"
                     alt="Bemol"
-                    className="w-[60%] h-auto mt-4 mx-auto rounded-md shadow-md"
+                    className="w-full sm:w-[60%]h-auto mt-4 mx-auto rounded-md shadow-md"
                 />
                 <br />
             </LesssonCard>
@@ -83,7 +83,7 @@ export default function Lesson4({ lessonId }) {
                 <img
                     src="/images/Leccion4/becuadro.jpg"
                     alt="Becuadro"
-                    className="w-[60%] h-auto mt-4 mx-auto rounded-md shadow-md"
+                    className="w-full sm:w-[60%]h-auto mt-4 mx-auto rounded-md shadow-md"
                 />
                 <br />
             </LesssonCard>
@@ -122,11 +122,10 @@ export default function Lesson4({ lessonId }) {
                         piano, debes presionar las 
                         teclas negras correspondientes.</strong>
                 </p>
-
-                <SustainPiano />
-
                 <br /><br />
             </LesssonCard>
+
+            <SustainPiano />
 
             <LessonsJumper id={4} test={true} />
             

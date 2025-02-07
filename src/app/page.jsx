@@ -55,7 +55,7 @@ export default function Home() {
               </Link>*/}
             </div>
             :
-            <div className="flex justify-center space-x-6 mt-8 fade-in opacity-0 translate-y-5 transition duration-700">
+            <div className="sm:flex justify-center sm:space-x-6 mt-8 fade-in opacity-0 translate-y-5 transition duration-700">
               <Link href="/login-form">
                 <GenericButton
                   text={"Inicia Sesión"}
@@ -65,7 +65,7 @@ export default function Home() {
               <Link href="signup-form">
                 <GenericButton
                   text={"Registrate"}
-                  styles="w-48 px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl font-bold"
+                  styles="w-48 px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl font-bold mt-4 sm:mt-0"
                 />
               </Link>
             </div>

@@ -5,7 +5,7 @@ import Interv4 from "@/components/test/piano/Interv4";
 
 export default function Lesson8({ lessonId }) {
     return (
-        <div className="w-full h-fit p-5">
+        <div className="w-full h-fit sm:p-5">
 
             <LessonTittle tittle={"Descubriendo los Intervalos de Cuarta"} lessonId={lessonId} />
 

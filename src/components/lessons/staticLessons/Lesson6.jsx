@@ -5,7 +5,7 @@ import Interv2 from "@/components/test/piano/Interv2";
 
 export default function Lesson6({ lessonId }) {
     return (
-        <div className="w-full h-fit p-5">
+        <div className="w-full h-fit sm:p-5">
 
             <LessonTittle tittle={"Explorando los Intervalos de Segunda"} lessonId={lessonId} />
 

@@ -4,7 +4,7 @@ import LessonsJumper from "../LessonsJumper";
 
 export default function Lesson1({ lessonId }) {
     return (
-        <div className="w-full h-fit p-5">
+        <div className="w-full h-fit sm:p-5">
 
             <LessonTittle tittle={"Introducción a la Música"} lessonId={lessonId} />
 
@@ -77,7 +77,7 @@ export default function Lesson1({ lessonId }) {
                     <img
                         src="/images/Leccion1/pentagrama.jpg"
                         alt="Pentagrama musical"
-                        className="w-[60%] h-auto mt-4 mx-auto rounded-md shadow-md"
+                        className="w-full sm:w-[60%] h-auto mt-4 mx-auto rounded-md shadow-md"
                     />
                     <br /><br />
                     La notación musical ha evolucionado a lo largo del tiempo,
@@ -91,7 +91,7 @@ export default function Lesson1({ lessonId }) {
                     <img
                         src="/images/Leccion1/figurasyclaves.jpg"
                         alt="Pentagrama musical"
-                        className="w-[60%] h-auto mt-4 mx-auto rounded-md shadow-md"
+                        className="w-full sm:w-[60%] h-auto mt-4 mx-auto rounded-md shadow-md"
                     />
                     <br /><br />
                     Al igual que el texto escrito, la música se puede leer y escribir,
@@ -102,7 +102,7 @@ export default function Lesson1({ lessonId }) {
                 <img
                     src="/images/Leccion1/piratasdelcaribe.jpg"
                     alt="Pentagrama musical"
-                    className="w-[60%] h-auto mt-4 mx-auto rounded-md shadow-md"
+                    className="w-full sm:w-[60%] h-auto mt-4 mx-auto rounded-md shadow-md"
                 />
                 <br /><br />
             </LesssonCard>

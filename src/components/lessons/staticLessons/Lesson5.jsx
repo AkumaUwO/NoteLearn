@@ -4,7 +4,7 @@ import LessonsJumper from "../LessonsJumper";
 
 export default function Lesson5({ lessonId }) {
     return (
-        <div className="w-full h-fit p-5">
+        <div className="w-full h-fit sm:p-5">
 
             <LessonTittle tittle={"Introducción a los Intervalos Musicales"} lessonId={lessonId} />
 

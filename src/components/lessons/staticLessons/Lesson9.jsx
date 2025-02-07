@@ -5,7 +5,7 @@ import Interv5 from "@/components/test/piano/Interv5";
 
 export default function Lesson9({ lessonId }) {
     return (
-        <div className="w-full h-fit p-5">
+        <div className="w-full h-fit sm:p-5">
 
             <LessonTittle tittle={"La Fuerza de los Intervalos de Quinta"} lessonId={lessonId} />
 

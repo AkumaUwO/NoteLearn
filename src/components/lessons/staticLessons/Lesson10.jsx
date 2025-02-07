@@ -6,7 +6,7 @@ import Furelise from "@/components/test/piano/FürElise";
 
 export default function Lesson10({ lessonId }) {
     return (
-        <div className="w-full h-fit p-5">
+        <div className="w-full h-fit sm:p-5">
 
             <LessonTittle tittle={"Explorando los Intervalos de Sexta"} lessonId={lessonId} />
 

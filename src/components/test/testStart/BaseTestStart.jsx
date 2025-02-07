@@ -17,9 +17,9 @@ export default function BaseTestStart({ testId, testTittle, start, setStart }) {
     return (
         <section className="w-full h-screen place-content-center text-center">
 
-            <div className="flex items-center justify-center">
+            <div className="sm:flex items-center justify-center">
 
-                <div className="flex items-center bg-gradient-to-r from-fuchsia-500 to-purple-600 p-2 rounded-full">
+                <div className="flex items-center bg-gradient-to-r from-fuchsia-500 to-purple-600 p-2 rounded-full w-fit">
 
                     <h2 className="text-white text-lg font-bold mx-3">
                         Prueba:
@@ -37,7 +37,7 @@ export default function BaseTestStart({ testId, testTittle, start, setStart }) {
 
             </div>
 
-            <div className="mx-auto my-5 p-5 w-3/4 border rounded-xl border-2 shadow-lg bg-transparent">
+            <div className="mx-auto my-5 p-5 w-full sm:w-3/4 border rounded-xl border-2 shadow-lg bg-transparent">
 
                 <h1 className="text-xl mb-3 font-extrabold text-fuchsia-600 text-center">
                     Preparate para una Prueba
